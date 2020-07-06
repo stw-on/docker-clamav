@@ -1,0 +1,12 @@
+version: '3.7'
+
+volumes:
+  store: {}
+
+services:
+  clam:
+    image: stwon/docker-clamav
+    restart: unless-stopped
+    volumes:
+      - ./clam-config:/etc/clamav/conf
+      - store:/store
